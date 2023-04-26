@@ -22,7 +22,7 @@
    }
 
 2. Авторизация пользователя
-   POST - http://url:port/auth/loginregister
+   POST - http://url:port/api/auth/login
    BODY JSON: {
    "username": "<string логина>",
    "password": "<string пароля>"
@@ -32,15 +32,15 @@
    }
 
 3. Выход пользователя
-   POST - http://url:port/auth/logout
+   POST - http://url:port/api/auth/logout
    BODY NO
 
 4. Обновить access & refresh токены (refresh пропишется в httpOnly)
-   GET - http://url:port/auth/refresh-tokens
+   GET - http://url:port/api/auth/refresh-tokens
    BODY NO
 
 5. Получить всех пользователей
-   GET - http://url:port/users
+   GET - http://url:port/api/users
    BODY NO
    headers: {
    Authorization: Bearer + ${access}
