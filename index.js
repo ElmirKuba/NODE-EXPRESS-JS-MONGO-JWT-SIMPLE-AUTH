@@ -15,9 +15,16 @@ const PORT = environment.PORT || 3000;
 
 const app = express();
 
+app.use(
+  cors({
+    credentials: true,
+    origin: '*',
+    methods: ['GET', 'POST', 'DELETE', 'OPTIONS', 'HEAD', 'PUT', 'PATCH'],
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
 app.use('/api', authController);
 app.use('/api', usersController);
 app.use(errorMiddleware);
