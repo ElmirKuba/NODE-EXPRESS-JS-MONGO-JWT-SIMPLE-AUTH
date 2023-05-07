@@ -9,7 +9,7 @@ const router = new Router();
 
 router.get(
   '/users',
-  [authMiddleware, roleMiddleware(['admin'])],
+  [authMiddleware, roleMiddleware(['user'])],
   async (request, response) => {
     try {
       const users = await userService.getAllUsers();
